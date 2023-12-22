@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <title>Interactive Instagram Photo Feed Customizer</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.0/examples/album/"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar shadow-sm">
+        <div class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <svg
+              xmlns="http://www.w3.org/1200/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              class="bi bi-instagram"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+              />
+            </svg>
+            <h4 class="ms-2 mb-0">Instagram</h4>
+          </a>
+          <div class="d-flex align-items-center gap-3">
+            <button
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#createPost"
+            >
+              Create A New Post
+            </button>
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <svg
+                  xmlns="http://www.w3.org/1200/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-gear"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"
+                  />
+                  <path
+                    d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"
+                  />
+                </svg>
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Accessibility</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Privacy & Data</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item text-danger" href="#">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="d-flex justify-content-center align-items-center gap-1 mt-5">
+        <button class="btn text-primary btn-view-toggle btn-grid-view">
+          <svg
+            xmlns="http://www.w3.org/1200/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            class="bi bi-grid"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"
+            />
+          </svg>
+        </button>
+        <button class="btn btn-view-toggle btn-list-view">
+          <svg
+            xmlns="http://www.w3.org/1200/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            class="bi bi-card-image"
+            viewBox="0 0 16 16"
+          >
+            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+            <path
+              d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="row my-5 g-3">
+        <div class="col-sm-12 col-lg-4 img-col">
+          <div class="list-visible d-none mb-2 p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="mb-0">A dog in winters</h4>
+              <p class="mb-0">12/12</p>
+            </div>
+          </div>
+          <img
+            class="w-100 h-100 post-img"
+            src="https://images.unsplash.com/photo-1702482858444-81b00ec28c27?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+
+          <div class="list-visible d-none mt-3 p-3">
+            <p class="fw-bold text-start mb-1">500 Likes</p>
+            <p class="mb-0 text-muted text-start">
+              This is an example of a very good photo that you can post on
+              Instagram.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 img-col">
+          <div class="list-visible d-none mb-2 p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="mb-0">Lunch served</h4>
+              <p class="mb-0">11/12</p>
+            </div>
+          </div>
+          <img
+            class="w-100 h-100 post-img"
+            src="https://images.unsplash.com/photo-1696935198489-5e4f3b5c7667?q=80&w=2957&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <div class="list-visible d-none mt-3 p-3">
+            <p class="fw-bold text-start mb-1">600 Likes</p>
+            <p class="mb-0 text-muted text-start">
+              This is an example of a very good photo that you can post on
+              Instagram.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 img-col">
+          <div class="list-visible d-none mb-2 p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="mb-0">Galaxy in the night</h4>
+              <p class="mb-0">10/12</p>
+            </div>
+          </div>
+          <img
+            class="w-100 h-100 post-img"
+            src="https://images.unsplash.com/photo-1696706806263-b65c6c60c11f?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <div class="list-visible d-none mt-3 p-3">
+            <p class="fw-bold text-start mb-1">700 Likes</p>
+            <p class="mb-0 text-muted text-start">
+              This is an example of a very good photo that you can post on
+              Instagram.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 img-col">
+          <div class="list-visible d-none mb-2 p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="mb-0">A dog in the mountains</h4>
+              <p class="mb-0">09/12</p>
+            </div>
+          </div>
+          <img
+            class="w-100 h-100 post-img"
+            src="https://images.unsplash.com/photo-1696543710864-fecad4bfbf62?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <div class="list-visible d-none mt-3 p-3">
+            <p class="fw-bold text-start mb-1">500 Likes</p>
+            <p class="mb-0 text-muted text-start">
+              This is an example of a very good photo that you can post on
+              Instagram.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 img-col">
+          <div class="list-visible d-none mb-2 p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="mb-0">Skyline</h4>
+              <p class="mb-0">08/12</p>
+            </div>
+          </div>
+          <img
+            class="w-100 h-100 post-img"
+            src="https://images.unsplash.com/photo-1696943444991-def9485f89f8?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <div class="list-visible d-none mt-3 p-3">
+            <p class="fw-bold text-start mb-1">500 Likes</p>
+            <p class="mb-0 text-muted text-start">
+              This is an example of a very good photo that you can post on
+              Instagram.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 img-col">
+          <div class="list-visible d-none mb-2 p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="mb-0">Classic car</h4>
+              <p class="mb-0">07/12</p>
+            </div>
+          </div>
+          <img
+            class="w-100 h-100 post-img"
+            src="https://images.unsplash.com/photo-1692769761942-9127f825b135?q=80&w=3028&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <div class="list-visible d-none mt-3 p-3">
+            <p class="fw-bold text-start mb-1">500 Likes</p>
+            <p class="mb-0 text-muted text-start">
+              This is an example of a very good photo that you can post on
+              Instagram.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 img-col">
+          <div class="list-visible d-none mb-2 p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="mb-0">Himalayan valley</h4>
+              <p class="mb-0">06/12</p>
+            </div>
+          </div>
+          <img
+            class="w-100 h-100 post-img"
+            src="https://images.unsplash.com/photo-1692553840076-7ebfe3dab6ac?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <div class="list-visible d-none mt-3 p-3">
+            <p class="fw-bold text-start mb-1">1000 Likes</p>
+            <p class="mb-0 text-muted text-start">
+              This is an example of a very good photo that you can post on
+              Instagram.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 img-col">
+          <div class="list-visible d-none mb-2 p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="mb-0">A bird</h4>
+              <p class="mb-0">05/12</p>
+            </div>
+          </div>
+          <img
+            class="w-100 h-100 post-img"
+            src="https://images.unsplash.com/photo-1696519293772-0b240f1e5318?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <div class="list-visible d-none mt-3 p-3">
+            <p class="fw-bold text-start mb-1">500 Likes</p>
+            <p class="mb-0 text-muted text-start">
+              This is an example of a very good photo that you can post on
+              Instagram.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 img-col">
+          <div class="list-visible d-none mb-2 p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="mb-0">Happy Halloween</h4>
+              <p class="mb-0">05/12</p>
+            </div>
+          </div>
+          <img
+            class="w-100 h-100 post-img"
+            src="https://plus.unsplash.com/premium_photo-1695058139658-384b2a0b1523?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <div class="list-visible d-none mt-3 p-3">
+            <p class="fw-bold text-start mb-1">600 Likes</p>
+            <p class="mb-0 text-muted text-start">
+              This is an example of a very good photo that you can post on
+              Instagram.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div
+      class="modal fade"
+      id="createPost"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Create A New Post
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-2">
+              <label for="post-caption" class="form-label">Caption:</label>
+              <textarea
+                rows="3"
+                id="post-caption"
+                class="form-control"
+                placeholder="Add the caption of your post here"
+              ></textarea>
+            </div>
+            <div class="d-flex align-items-center gap-1">
+              <button class="btn">
+                <svg
+                  xmlns="http://www.w3.org/1200/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-camera"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4z"
+                  />
+                  <path
+                    d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"
+                  />
+                </svg>
+              </button>
+              <button class="btn">
+                <svg
+                  xmlns="http://www.w3.org/1200/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="#212529"
+                    d="M12 14c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2z"
+                  ></path>
+                  <path
+                    fill="#212529"
+                    d="M11.42 21.814a.998.998 0 0 0 1.16 0C12.884 21.599 20.029 16.44 20 10c0-4.411-3.589-8-8-8S4 5.589 4 9.995c-.029 6.445 7.116 11.604 7.42 11.819zM12 4c3.309 0 6 2.691 6 6.005.021 4.438-4.388 8.423-6 9.73-1.611-1.308-6.021-5.294-6-9.735 0-3.309 2.691-6 6-6z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-dismiss="modal"
+            >
+              Publish
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
